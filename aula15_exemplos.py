@@ -52,17 +52,9 @@ par = 0
 impar = 0
 p = 0
 while p < len(lista):
-    
+
 
     p += 1
 
 print("A quantidade de pares é", par)
 print("A quantidade de ímpares é", impar)
-
-
-
-
-
-
-
-
