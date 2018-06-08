@@ -17,3 +17,11 @@ p = 0
 while p < len(lista):
     lista[p] = p + 1
     p = p + 1
+
+# Exercício 1a
+p = 0
+while p < len(lista):
+    print("Na posição {} tem o valor {}.".format(p, lista[p]))
+    p = p + 1
+
+# Exercício 1b ....
