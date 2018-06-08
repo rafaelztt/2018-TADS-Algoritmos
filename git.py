@@ -12,6 +12,7 @@ email = input("Digite enter para manter o {} como padrão ou informe seu e-mail:
 if email == "":
     email = email_padrao
 
+print("\n------------------------------------")
 print("Adicionando os novos arquivos...\n")
 os.system("git add *")
 
