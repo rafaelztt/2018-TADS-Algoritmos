@@ -1,4 +1,6 @@
+# Importa a função randint da biblioteca random
 from random import randint
+
 # Criação do vetor para armazenar números
 loteria = [""]*6
 # Variável de controle do laço de repetição
@@ -9,7 +11,6 @@ while i < len(loteria):
     num = randint(1,60)
     # Variável para saber se repetiu ou não
     repetiu = "n"
-
     # Variável de controle do laço que verifica se o número já existe ou não
     k = 0
     # Laço para verificação do número
@@ -37,3 +38,19 @@ while i < len(loteria):
 
 # Mostrar a lista gerada
 print(loteria)
+
+
+##### Porque eu gosto do Python? #####
+
+# Cria um vetor vazio (0 posições)
+numeros = []
+# Enquanto o tamanho do vetor for menor do que 6 números...
+while len(numeros) < 6:
+    # Gera um número
+    num = randint(1,60)
+    # Verifica se este número não está na lista
+    if num not in numeros:
+        # Adiciona o número ao final da lista
+        numeros.append(num)
+
+print(numeros)
