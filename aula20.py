@@ -26,7 +26,6 @@ _____
 ########## Início do programa ############
 
 erro=2
-Lá pela linha 50
 """
 ...
 Seu código
