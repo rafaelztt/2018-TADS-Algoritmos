@@ -72,12 +72,15 @@ def listar_usuarios(conexao):
     # Toda vez que executa o select, precisa usar o fetch para buscar os registros
     usuarios = cursor.fetchall() # buscar todos
 
-    print(usuarios)
+    # Percorrer a lista com os registros
+    # Estou chamando de "u" cada item dessa lista
+    for usr in usuarios:
+        print( "{}: {} ({})".format(usr[0], usr[1], usr[2]) )
 
 ############ P R I N C I P A L #############
 
 # 1º - Iniciar a conexão (ligação) com nosso banco
-print("Conectando no banco...")
+print("Conectando no banco...\n\n")
 conexao = sqlite3.connect("aula28.sqlite")
 
 
@@ -85,5 +88,5 @@ listar_usuarios(conexao)
 
 
 # Fechando a conexão (ligação) com o banco
-print("Fechando conexão com o banco...")
+print("\n\nFechando conexão com o banco...")
 conexao.close()
