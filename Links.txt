@@ -1,0 +1,7 @@
+
+Banco de dados SQLite
+
+Visualisador online: http://inloop.github.io/sqlite-viewer/
+
+Programa para baixar: https://sqlitebrowser.org/
+
