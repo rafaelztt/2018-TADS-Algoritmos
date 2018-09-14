@@ -56,16 +56,34 @@ def inserir_usuario(conexao):
     # O commit sempre deve ser feito depois do INSERT, UPDATE ou DELETE
     conexao.commit()
 
+# Listar os registros de usuário
+def listar_usuarios(conexao):
+
+    # Cria o cursor para operar o banco
+    cursor = conexao.cursor()
+
+    # Monta o SQL
+    sql = "SELECT rowid, * FROM usuario;"
+
+    # Executa o SQL
+    cursor.execute(sql)
+
+    # Armazena os dados (registros) do select
+    # Toda vez que executa o select, precisa usar o fetch para buscar os registros
+    usuarios = cursor.fetchall() # buscar todos
+
+    print(usuarios)
 
 ############ P R I N C I P A L #############
 
 # 1º - Iniciar a conexão (ligação) com nosso banco
+print("Conectando no banco...")
 conexao = sqlite3.connect("aula28.sqlite")
 
 
-inserir_usuario(conexao)
-
+listar_usuarios(conexao)
 
 
 # Fechando a conexão (ligação) com o banco
+print("Fechando conexão com o banco...")
 conexao.close()
