@@ -137,6 +137,9 @@ if opcao == 1:
 elif opcao == 2:
     print("\n--- Buscar registro ---\n")
 
+    # Exemplo de sql para consultar tudo que contenah o nome digitado
+    # "SELECT ...... WHERE nome LIKE '%{}%';".format(nome)
+
 elif opcao == 3:
     print("\n--- Listagem registros ---\n")
     listar_usuarios(conexao)
@@ -146,6 +149,7 @@ elif opcao == 4:
 
 elif opcao == 5:
     print("\n--- Exclusão de registro ---")
+
 
 elif opcao == 9:
     print("\n--- Voltando ---\n")
