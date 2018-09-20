@@ -117,11 +117,13 @@ você deseja...
 3 - Listar
 4 - Alterar
 5 - Excluir
+9 - Voltar
 """)
 
 opcao = int(input("Opção desejada: "))
 
 if opcao == 1:
+    print("\n--- Digite os dados do usuário ---\n")
 
     n = input("Nome: ")
     l = input("Login: ")
@@ -129,8 +131,27 @@ if opcao == 1:
 
     # Validar campos obrigatórios
     # ...
+
     inserir_usuario(conexao, n, l, s)
 
+elif opcao == 2:
+    print("\n--- Buscar registro ---\n")
+
+elif opcao == 3:
+    print("\n--- Listagem registros ---\n")
+    listar_usuarios(conexao)
+
+elif opcao == 4:
+    print("\n--- Alteração de registros ---\n")
+
+elif opcao == 5:
+    print("\n--- Exclusão de registro ---")
+
+elif opcao == 9:
+    print("\n--- Voltando ---\n")
+
+else:
+    print("\n--- Opção inválida! ---\n")
 # Fim do seu programa
 
 # Fechando a conexão (ligação) com o banco
