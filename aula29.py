@@ -100,64 +100,63 @@ def excluir_usuario(conexao, id):
     conexao.commit()
 
 
-############ P R I N C I P A L #############
+def menuUsuario():
+    # 1º - Iniciar a conexão (ligação) com nosso banco
+    print("Conectando no banco...\n\n")
+    conexao = sqlite3.connect("aula28.sqlite")
 
-# 1º - Iniciar a conexão (ligação) com nosso banco
-print("Conectando no banco...\n\n")
-conexao = sqlite3.connect("aula28.sqlite")
+    # Início do programa
+    # Pedir para o usuário as opções, dados, etc
+    print("""
+    Em relação aos usuários do sistema,
+    você deseja...
 
-# Início do programa
-# Pedir para o usuário as opções, dados, etc
-print("""
-Em relação aos usuários do sistema,
-você deseja...
+    1 - Inserir
+    2 - Buscar
+    3 - Listar
+    4 - Alterar
+    5 - Excluir
+    9 - Voltar
+    """)
 
-1 - Inserir
-2 - Buscar
-3 - Listar
-4 - Alterar
-5 - Excluir
-9 - Voltar
-""")
+    opcao = int(input("Opção desejada: "))
 
-opcao = int(input("Opção desejada: "))
+    if opcao == 1:
+        print("\n--- Digite os dados do usuário ---\n")
 
-if opcao == 1:
-    print("\n--- Digite os dados do usuário ---\n")
+        n = input("Nome: ")
+        l = input("Login: ")
+        s = input("Senha: ")
 
-    n = input("Nome: ")
-    l = input("Login: ")
-    s = input("Senha: ")
+        # Validar campos obrigatórios
+        # ...
 
-    # Validar campos obrigatórios
-    # ...
+        inserir_usuario(conexao, n, l, s)
 
-    inserir_usuario(conexao, n, l, s)
+    elif opcao == 2:
+        print("\n--- Buscar registro ---\n")
 
-elif opcao == 2:
-    print("\n--- Buscar registro ---\n")
+        # Exemplo de sql para consultar tudo que contenah o nome digitado
+        # "SELECT ...... WHERE nome LIKE '%{}%';".format(nome)
 
-    # Exemplo de sql para consultar tudo que contenah o nome digitado
-    # "SELECT ...... WHERE nome LIKE '%{}%';".format(nome)
+    elif opcao == 3:
+        print("\n--- Listagem registros ---\n")
+        listar_usuarios(conexao)
 
-elif opcao == 3:
-    print("\n--- Listagem registros ---\n")
-    listar_usuarios(conexao)
+    elif opcao == 4:
+        print("\n--- Alteração de registros ---\n")
 
-elif opcao == 4:
-    print("\n--- Alteração de registros ---\n")
-
-elif opcao == 5:
-    print("\n--- Exclusão de registro ---")
+    elif opcao == 5:
+        print("\n--- Exclusão de registro ---")
 
 
-elif opcao == 9:
-    print("\n--- Voltando ---\n")
+    elif opcao == 9:
+        print("\n--- Voltando ---\n")
 
-else:
-    print("\n--- Opção inválida! ---\n")
-# Fim do seu programa
+    else:
+        print("\n--- Opção inválida! ---\n")
+    # Fim do seu programa
 
-# Fechando a conexão (ligação) com o banco
-print("\n\nFechando conexão com o banco...")
-conexao.close()
+    # Fechando a conexão (ligação) com o banco
+    print("\n\nFechando conexão com o banco...")
+    conexao.close()
